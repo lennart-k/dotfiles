@@ -1,0 +1,10 @@
+# This configuration is managed by dotfiles
+font.family: serif
+font.size: 8
+
+figure.dpi: 200
+figure.autolayout: True
+
+legend.frameon: False
+xtick.direction: in
+ytick.direction: in
