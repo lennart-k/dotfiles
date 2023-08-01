@@ -12,7 +12,8 @@ require("lazy").setup({
     { "Shatur/neovim-ayu", lazy = false },
     -- { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "ayu" } },
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.rust" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
