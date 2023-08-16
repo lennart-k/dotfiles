@@ -1,7 +1,6 @@
 return {
   {
     "nvarner/typst-lsp",
-    ft = "typst",
     opts = {
       exportPdf = "onType",
     },
