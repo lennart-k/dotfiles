@@ -1,0 +1,49 @@
+# vi: ft=i3config
+set $mod Mod4
+set $alt Mod1
+set $TERMINAL alacritty
+
+# Visuals
+for_window [class="^.*"] border pixel 2
+font pango:Noto Sans 6
+hide_edge_borders smart
+
+exec_always --no-startup-id picom
+# Polkit authentication agent
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id setxkbmap -option keypad:pointerkeys -layout de -variant nodeadkeys
+exec_always --no-startup-id $HOME/.config/polybar/launch
+
+# Install xss-lock
+exec_always xss-lock --transfer-sleep-lock -- i3lock -c 000000
+bindsym $mod+Escape exec loginctl lock-session
+
+# network-manager-applet
+exec_always --no-startup-id nm-applet
+
+# Launchers
+bindsym $mod+Return exec $TERMINAL
+bindsym $mod+d exec rofi -show combi -config ~/.config/rofi/dmenu/config.rasi -icon-theme Papirus
+
+include ./media_control
+include ./screenshots
+include ./windows
+include ./zoom
+include ./workspaces
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+mode "resize" {
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"

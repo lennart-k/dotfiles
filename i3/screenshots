@@ -1,0 +1,14 @@
+# vi: ft=i3config
+# Screenshots (Install xclip and maim)
+# Ctrl for clipboard
+# Shift for selection
+# Mod1 (Alt) for window
+bindsym Ctrl+Shift+Print --release exec maim -s | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print --release exec maim | xclip -selection clipboard -t image/png
+bindsym Shift+Print --release exec "maim -s \\"$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d %H-%M-%S').png\\""
+bindsym Print --release exec "maim \\"$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d %H-%M-%S').png\\""
+bindsym Ctrl+Mod1+Print --release exec "maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
+bindsym Mod1+Tab --release exec "maim -i $(xdotool getactivewindow) \\"$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d %H-%M-%S').png\\""
+
+
+
