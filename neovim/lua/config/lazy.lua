@@ -10,6 +10,7 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "Shatur/neovim-ayu", lazy = false },
+    { "chrisbra/Recover.vim", lazy = false },
     -- { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "ayu" } },
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
