@@ -30,6 +30,9 @@ local harpoon_ui = require("harpoon.ui")
 map("n", "<leader>h", harpoon_mark.toggle_file, { desc = "Toggle file Harpoonification" })
 map("n", "<C-e>", function()
   harpoon_ui.toggle_quick_menu()
+  if Harpoon_win_id == nil then
+    return
+  end
   for i = 1, 9 do
     vim.api.nvim_buf_set_keymap(
       Harpoon_bufh,
