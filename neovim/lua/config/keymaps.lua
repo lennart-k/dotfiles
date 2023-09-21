@@ -27,7 +27,7 @@ end
 local harpoon_mark = require("harpoon.mark")
 local harpoon_ui = require("harpoon.ui")
 
-map("n", "<leader>h", harpoon_mark.toggle_file, { desc = "Toggle file Harpoonification" })
+map("n", "<leader>h", harpoon_mark.add_file, { desc = "Harpoon file" })
 map("n", "<C-e>", function()
   harpoon_ui.toggle_quick_menu()
   if Harpoon_win_id == nil then
@@ -43,3 +43,10 @@ map("n", "<C-e>", function()
     )
   end
 end, { desc = "Toggle Harpoon" })
+
+-- vim-tmux-navigator
+map({ "i", "n", "v" }, "<C-k>", "<cmd>TmuxNavigateUp<cr><esc>", { desc = "Move cursor to top pane" })
+map({ "i", "n", "v" }, "<C-j>", "<cmd>TmuxNavigateDown<cr><esc>", { desc = "Move cursor to bottom pane" })
+map({ "i", "n", "v" }, "<C-h>", "<cmd>TmuxNavigateLeft<cr><esc>", { desc = "Move cursor to left pane" })
+map({ "i", "n", "v" }, "<C-l>", "<cmd>TmuxNavigateRight<cr><esc>", { desc = "Move cursor to right pane" })
+map({ "i", "n", "v" }, "<C-\\>", "<cmd>TmuxNavigatePrevious<cr><esc>", { desc = "Move cursor to previous pane" })

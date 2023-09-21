@@ -13,6 +13,7 @@ require("lazy").setup({
     { "chrisbra/Recover.vim", lazy = false },
     -- { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "ayu" } },
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "christoomey/vim-tmux-navigator", lazy = false },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.go" },
