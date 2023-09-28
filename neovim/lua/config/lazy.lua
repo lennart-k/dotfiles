@@ -22,6 +22,19 @@ require("lazy").setup({
     -- import/override with your plugins
     { "folke/noice.nvim", enabled = false },
     { "echasnovski/mini.indentscope", enabled = false },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      init = function()
+        require("nvim-treesitter.parsers").get_parser_configs().typst = {
+          install_info = {
+            url = "https://github.com/uben0/tree-sitter-typst.git",
+            files = { "src/parser.c", "src/scanner.c" },
+            branch = "v0.8.0-2",
+          },
+          filetype = "typ",
+        }
+      end,
+    },
     { import = "plugins" },
   },
   defaults = {
