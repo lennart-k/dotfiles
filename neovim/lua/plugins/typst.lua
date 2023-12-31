@@ -15,7 +15,7 @@ return {
   -- },
   {
     "kaarmu/typst.vim",
-    commit = "e4d0721",
+    -- commit = "e4d0721",
     ft = "typst",
     lazy = false,
   },
