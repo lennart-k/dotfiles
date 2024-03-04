@@ -6,10 +6,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Install playerctl
-bindsym XF86AudioPause exec playerctl --player=spotify play-pause || playerctl play-pause
-bindsym XF86AudioPlay exec playerctl --player=spotify play || playerctl play
-bindsym XF86AudioNext exec playerctl --player=spotify next || playerctl next
-bindsym XF86AudioPrev exec playerctl --player=spotify previous || playerctl previous
+bindsym XF86AudioPause exec playerctl --player=tidal-hifi play-pause || playerctl play-pause
+bindsym XF86AudioPlay exec playerctl --player=tidal-hifi play || playerctl play
+bindsym XF86AudioNext exec playerctl --player=tidal-hifi next || playerctl next
+bindsym XF86AudioPrev exec playerctl --player=tidal-hifi previous || playerctl previous
 
 bindsym $mod+XF86AudioPause exec playerctl play-pause
 bindsym $mod+XF86AudioPlay exec playerctl play
