@@ -4,6 +4,7 @@ return {
     { "nvim-treesitter/nvim-treesitter", lazy = true },
   },
   event = "VeryLazy",
+  ft = "org",
   config = function()
     -- Load treesitter grammar for org
     require("orgmode").setup_ts_grammar()
