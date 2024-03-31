@@ -3,6 +3,8 @@
 if status is-login
     and not set -q TMUX # *
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+        set -x GTK_USE_PORTAL 1
+        set -x XDG_CURRENT_DESKTOP i3
         exec startx -- -keeptty
     end
 end
