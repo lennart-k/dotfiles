@@ -23,10 +23,10 @@ return {
       org_default_notes_file = "~/Notes/refile.org",
     })
 
-    require("cmp").setup({
-      sources = {
-        name = "orgmode",
-      },
-    })
+    -- require("cmp").setup({
+    --   sources = {
+    --     name = "orgmode",
+    --   },
+    -- })
   end,
 }
