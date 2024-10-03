@@ -1,15 +1,8 @@
 return {
   {
     "alexghergh/nvim-tmux-navigation",
-    lazy = false,
-    config = function()
-      local nvim_tmux_nav = require("nvim-tmux-navigation")
-      vim.keymap.set("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
-      vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
-      vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
-      vim.keymap.set("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
-      vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
-      vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+    lazy = true,
+    init = function()
       require("nvim-tmux-navigation").setup({
         disable_when_zoomed = true, -- defaults to false
         keybindings = {
@@ -21,6 +14,52 @@ return {
           next = "<C-Space>",
         },
       })
+    end,
+    keys = function()
+      return {
+        {
+          "<C-h>",
+          function()
+            require("nvim-tmux-navigation").NvimTmuxNavigateLeft()
+          end,
+          mode = { "i", "n", "v" },
+        },
+        {
+          "<C-j>",
+          function()
+            require("nvim-tmux-navigation").NvimTmuxNavigateDown()
+          end,
+          mode = { "i", "n", "v" },
+        },
+        {
+          "<C-k>",
+          function()
+            require("nvim-tmux-navigation").NvimTmuxNavigateUp()
+          end,
+          mode = { "i", "n", "v" },
+        },
+        {
+          "<C-l>",
+          function()
+            require("nvim-tmux-navigation").NvimTmuxNavigateRight()
+          end,
+          mode = { "i", "n", "v" },
+        },
+        {
+          "<C-\\>",
+          function()
+            require("nvim-tmux-navigation").NvimTmuxNavigateLastActive()
+          end,
+          mode = { "i", "n", "v" },
+        },
+        {
+          "<C-Space>",
+          function()
+            require("nvim-tmux-navigation").NvimTmuxNavigateRight()
+          end,
+          mode = { "i", "n", "v" },
+        },
+      }
     end,
   },
 }
