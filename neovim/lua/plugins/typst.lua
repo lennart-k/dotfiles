@@ -1,22 +1,59 @@
 return {
+  -- requires tinymist
   {
-    "nvarner/typst-lsp",
+    "williamboman/mason.nvim",
     opts = {
-      exportPdf = "onType",
+      ensure_installed = {
+        "tinymist",
+      },
     },
   },
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   opts = {
-  --     servers = {
-  --       typst_lsp = {},
-  --     },
-  --   },
-  -- },
+  -- add tinymist to lspconfig
   {
-    "kaarmu/typst.vim",
-    -- commit = "e4d0721",
-    ft = "typst",
-    lazy = false,
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
+    ---@class PluginLspOpts
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        tinymist = {
+          --- todo: these configuration from lspconfig maybe broken
+          single_file_support = true,
+          root_dir = function()
+            return vim.fn.getcwd()
+          end,
+          settings = {
+            exportPdf = "onSave",
+          },
+        },
+      },
+    },
   },
 }
+
+-- return {
+--   -- {
+--   --   "nvarner/typst-lsp",
+--   --   opts = {
+--   --     exportPdf = "onType",
+--   --   },
+--   -- },
+--   -- {
+--   --   "neovim/nvim-lspconfig",
+--   --   opts = {
+--   --     servers = {
+--   --       typst_lsp = {},
+--   --     },
+--   --   },
+--   -- },
+--   {
+--     "kaarmu/typst.vim",
+--     -- commit = "e4d0721",
+--     ft = "typst",
+--     lazy = false,
+--   },
+--   {}
+-- }
