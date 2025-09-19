@@ -9,7 +9,7 @@ theme = 'default'
 timeout = 0.0
 
 [activation_mode]
-labels = 'jkl;asdf'
+labels = 'jklasdf'
 
 [builtins.applications]
 context_aware = true
@@ -33,14 +33,6 @@ icon = 'bookmark'
 name = 'bookmarks'
 placeholder = 'Bookmarks'
 switcher_only = true
-weight = 5.0
-
-[builtins.calc]
-icon = 'accessories-calculator'
-min_chars = 4.0
-name = 'calc'
-placeholder = 'Calculator'
-require_number = true
 weight = 5.0
 
 [builtins.clipboard]
@@ -85,7 +77,7 @@ weight = 5.0
 [builtins.finder]
 concurrency = 8.0
 icon = 'file'
-ignore_gitignore = true
+ignore_gitignore = false
 name = 'finder'
 placeholder = 'Finder'
 refresh = true
@@ -127,17 +119,6 @@ placeholder = 'Symbols'
 switcher_only = true
 typeahead = true
 weight = 5.0
-
-[builtins.websearch]
-icon = 'applications-internet'
-name = 'websearch'
-placeholder = 'Websearch'
-weight = 5.0
-
-[[builtins.websearch.entries]]
-name = 'DuckDuckGo'
-switcher_only = true
-url = 'https://duckduckgo.com/?q=%TERM%'
 
 [builtins.windows]
 icon = 'view-restore'
@@ -189,4 +170,3 @@ exec = "systemctl reboot"
 label = "Lock Screen"
 icon = "system-lock-screen"
 exec = "playerctl --all-players pause & hyprlock"
-
