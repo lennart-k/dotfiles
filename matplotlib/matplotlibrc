@@ -1,6 +1,18 @@
 # This configuration is managed by dotfiles
-font.family: serif
+# font.family: serif
+# font.family: "Comic Sans MS"
 font.size: 8
+
+mathtext.bf: "serif:bold"
+mathtext.bfit: "serif:italic:bold"
+mathtext.cal: "cursive"
+mathtext.default: "it"
+mathtext.fallback: "cm"
+mathtext.fontset: "dejavuserif"
+mathtext.it: "serif:italic"
+mathtext.rm: "serif"
+mathtext.sf: "serif"
+mathtext.tt: "monospace"
 
 figure.dpi: 200
 figure.autolayout: True
