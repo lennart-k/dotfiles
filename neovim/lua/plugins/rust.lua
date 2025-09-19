@@ -7,25 +7,25 @@ return {
   end,
 
   -- Extend auto completion
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "Saecki/crates.nvim",
-        event = { "BufRead Cargo.toml" },
-        opts = {
-          completion = {
-            cmp = { enabled = true },
-          },
-        },
-      },
-    },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      opts.sources = opts.sources or {}
-      table.insert(opts.sources, { name = "crates" })
-    end,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = {
+  --     {
+  --       "Saecki/crates.nvim",
+  --       event = { "BufRead Cargo.toml" },
+  --       opts = {
+  --         completion = {
+  --           cmp = { enabled = true },
+  --         },
+  --       },
+  --     },
+  --   },
+  --   ---@param opts cmp.ConfigSchema
+  --   opts = function(_, opts)
+  --     opts.sources = opts.sources or {}
+  --     table.insert(opts.sources, { name = "crates" })
+  --   end,
+  -- },
 
   -- Add Rust & related to treesitter
   {
@@ -35,7 +35,7 @@ return {
 
   -- Ensure Rust debugger is installed
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     optional = true,
     opts = { ensure_installed = { "codelldb" } },
   },
@@ -55,7 +55,6 @@ return {
           end, { desc = "Rust Debuggables", buffer = bufnr })
         end,
         default_settings = {
-          -- rust-analyzer language server configuration
           ["rust-analyzer"] = {
             cargo = {
               allFeatures = true,
@@ -69,7 +68,7 @@ return {
             procMacro = {
               enable = true,
               ignored = {
-                -- ["async-trait"] = { "async_trait" },
+                ["async-trait"] = { "async_trait" },
                 ["napi-derive"] = { "napi" },
                 ["async-recursion"] = { "async_recursion" },
               },
@@ -94,31 +93,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        taplo = {
-          keys = {
-            {
-              "K",
-              function()
-                if vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
-                  require("crates").show_popup()
-                else
-                  vim.lsp.buf.hover()
-                end
-              end,
-              desc = "Show Crate Documentation",
-            },
-          },
-        },
-      },
-    },
-  },
-
-  {
-    "nvim-neotest/neotest",
-    optional = true,
-    opts = {
-      adapters = {
-        ["rustaceanvim.neotest"] = {},
+        rust_analyzer = { enabled = false },
       },
     },
   },

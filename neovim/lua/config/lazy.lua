@@ -8,19 +8,19 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
   spec = {
-    -- add LazyVim and import its plugins
-    { "Shatur/neovim-ayu", lazy = false },
-    { "chrisbra/Recover.vim", lazy = false },
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- { "christoomey/vim-tmux-navigator", lazy = false },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.coding.luasnip" },
+    -- "lazyvim.plugins.extras.lang.haskell",
     { "folke/noice.nvim", enabled = false },
     { "catppucin/nvim", enabled = false },
     { "folke/tokyonight", enabled = false },
-    { "echasnovski/mini.indentscope", enabled = false },
+    { "nvim-mini/mini.indentscope", enabled = false },
+    { "Shatur/neovim-ayu", lazy = false },
+    { "chrisbra/Recover.vim", lazy = false },
     { import = "plugins" },
   },
   defaults = {
