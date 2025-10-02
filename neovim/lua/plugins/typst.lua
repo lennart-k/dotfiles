@@ -20,11 +20,11 @@ return {
       ---@type lspconfig.options
       servers = {
         tinymist = {
-          --- todo: these configuration from lspconfig maybe broken
+          --- todo: these configuration from lspconfig may be broken
           single_file_support = true,
-          root_dir = function()
-            return vim.fn.getcwd()
-          end,
+          -- root_dir = function()
+          --   return vim.fn.getcwd()
+          -- end,
           settings = {
             exportPdf = "onSave",
           },
@@ -32,28 +32,10 @@ return {
       },
     },
   },
+  {
+    "chomosuke/typst-preview.nvim",
+    lazy = false, -- or ft = 'typst'
+    version = "1.*",
+    opts = {}, -- lazy.nvim will implicitly calls `setup {}`
+  },
 }
-
--- return {
---   -- {
---   --   "nvarner/typst-lsp",
---   --   opts = {
---   --     exportPdf = "onType",
---   --   },
---   -- },
---   -- {
---   --   "neovim/nvim-lspconfig",
---   --   opts = {
---   --     servers = {
---   --       typst_lsp = {},
---   --     },
---   --   },
---   -- },
---   {
---     "kaarmu/typst.vim",
---     -- commit = "e4d0721",
---     ft = "typst",
---     lazy = false,
---   },
---   {}
--- }

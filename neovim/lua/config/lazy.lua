@@ -22,6 +22,14 @@ require("lazy").setup({
     { "Shatur/neovim-ayu", lazy = false },
     { "chrisbra/Recover.vim", lazy = false },
     { import = "plugins" },
+    {
+      "mason-org/mason-lspconfig.nvim",
+      opts = {},
+      dependencies = {
+        { "mason-org/mason.nvim", opts = {} },
+        "neovim/nvim-lspconfig",
+      },
+    },
   },
   defaults = {
     lazy = true,
