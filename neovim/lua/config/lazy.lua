@@ -19,6 +19,7 @@ require("lazy").setup({
     { "catppucin/nvim", enabled = false },
     { "folke/tokyonight", enabled = false },
     { "nvim-mini/mini.indentscope", enabled = false },
+
     { "Shatur/neovim-ayu", lazy = false },
     { "chrisbra/Recover.vim", lazy = false },
     { import = "plugins" },
