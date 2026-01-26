@@ -24,6 +24,17 @@ require("lazy").setup({
     { "chrisbra/Recover.vim", lazy = false },
     { import = "plugins" },
     {
+      "andythigpen/nvim-coverage",
+      version = "*",
+      lazy = false,
+      config = function()
+        require("coverage").setup({
+          commands = true,
+          auto_reload = true,
+        })
+      end,
+    },
+    {
       "mason-org/mason-lspconfig.nvim",
       opts = {},
       dependencies = {
