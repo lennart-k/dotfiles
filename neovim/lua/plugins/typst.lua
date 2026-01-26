@@ -19,6 +19,11 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
+        ["ltex-ls-plus"] = {
+          settings = {
+            language = "en-GB",
+          },
+        },
         tinymist = {
           --- todo: these configuration from lspconfig may be broken
           single_file_support = true,
