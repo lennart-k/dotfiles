@@ -16,7 +16,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.luasnip" },
     -- "lazyvim.plugins.extras.lang.haskell",
     { import = "plugins" },
-
+    { "Shatur/neovim-ayu", lazy = false },
+    { "neovim/nvim-lspconfig", lazy = false },
 
     -- Disable some unused plugins
     { "folke/noice.nvim", enabled = false },
@@ -25,16 +26,6 @@ require("lazy").setup({
     { "nvim-mini/mini.indentscope", enabled = false },
     { "mason-org/mason.nvim", enabled = false },
     { "mason-org/mason-lspconfig.nvim", enabled = false },
-
-    { "Shatur/neovim-ayu", lazy = false },
-    -- {
-    --   "mason-org/mason-lspconfig.nvim",
-    --   opts = {},
-    --   dependencies = {
-    --     -- { "mason-org/mason.nvim", opts = {} },
-    --     "neovim/nvim-lspconfig",
-    --   },
-    -- },
   },
   lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
   defaults = {
