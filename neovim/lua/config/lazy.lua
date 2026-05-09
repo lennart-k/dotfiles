@@ -15,34 +15,26 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.coding.luasnip" },
     -- "lazyvim.plugins.extras.lang.haskell",
+    { import = "plugins" },
+
+
+    -- Disable some unused plugins
     { "folke/noice.nvim", enabled = false },
-    { "catppucin/nvim", enabled = false },
-    { "folke/tokyonight", enabled = false },
+    { "catppuccin/nvim", enabled = false },
+    { "folke/tokyonight.nvim", enabled = false },
     { "nvim-mini/mini.indentscope", enabled = false },
     { "mason-org/mason.nvim", enabled = false },
+    { "mason-org/mason-lspconfig.nvim", enabled = false },
 
     { "Shatur/neovim-ayu", lazy = false },
-    { "chrisbra/Recover.vim", lazy = false },
-    { import = "plugins" },
-    {
-      "andythigpen/nvim-coverage",
-      version = "*",
-      lazy = false,
-      config = function()
-        require("coverage").setup({
-          commands = true,
-          auto_reload = true,
-        })
-      end,
-    },
-    {
-      "mason-org/mason-lspconfig.nvim",
-      opts = {},
-      dependencies = {
-        -- { "mason-org/mason.nvim", opts = {} },
-        "neovim/nvim-lspconfig",
-      },
-    },
+    -- {
+    --   "mason-org/mason-lspconfig.nvim",
+    --   opts = {},
+    --   dependencies = {
+    --     -- { "mason-org/mason.nvim", opts = {} },
+    --     "neovim/nvim-lspconfig",
+    --   },
+    -- },
   },
   lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
   defaults = {
