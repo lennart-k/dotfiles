@@ -24,16 +24,6 @@ return {
           function()
             local harpoon = require("harpoon")
             harpoon.ui:toggle_quick_menu(harpoon:list())
-            -- if harpoon.ui.win_id == nil then
-            --   return
-            -- end
-            -- for i = 1, 9 do
-            --   vim.api.nvim_buf_set_keymap(harpoon.ui.bufnr, "n", string.format("%d", i), "", {
-            --     -- silent = true,
-            --     noremap = true,
-            --     callback = function() end,
-            --   })
-            -- end
           end,
           desc = "Harpoon Quick Menu",
         },

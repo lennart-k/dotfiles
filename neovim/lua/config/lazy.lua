@@ -19,6 +19,7 @@ require("lazy").setup({
     { "catppucin/nvim", enabled = false },
     { "folke/tokyonight", enabled = false },
     { "nvim-mini/mini.indentscope", enabled = false },
+    { "mason-org/mason.nvim", enabled = false },
 
     { "Shatur/neovim-ayu", lazy = false },
     { "chrisbra/Recover.vim", lazy = false },
@@ -38,7 +39,7 @@ require("lazy").setup({
       "mason-org/mason-lspconfig.nvim",
       opts = {},
       dependencies = {
-        { "mason-org/mason.nvim", opts = {} },
+        -- { "mason-org/mason.nvim", opts = {} },
         "neovim/nvim-lspconfig",
       },
     },
